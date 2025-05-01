@@ -7,7 +7,7 @@
 ASPNETCORE_ENVIRONMENT=Development \
 dotnet ef migrations add InitialSqlite \
 --context AppDbContext \
---output-dir Migrations.Sqlite
+--output-dir Migrations/Sqlite
 ```
 
 ## PotgreSQL Migration
@@ -17,5 +17,11 @@ dotnet ef migrations add InitialSqlite \
 ASPNETCORE_ENVIRONMENT=Production \
 dotnet ef migrations add InitialPostgres \
 --context AppDbContext \
---output-dir Migrations.Postgres
+--output-dir Migrations/Postgres
+```
+
+## Docker
+
+```shell
+docker-compose down --volumes --rmi all
 ```
